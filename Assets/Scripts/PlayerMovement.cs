@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
-    //public Controller controller;
+
     [SerializeField] public float maxMoveSpeed;
     [SerializeField] public float movementAcceleration;
     [SerializeField] public float groundLinearDrag;
@@ -20,6 +20,7 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private float fallMultiplier;
     [SerializeField] private float lowJumpFallMultiplier;
     private bool onGround;
+    public Animator animator;
 
     void Start()
     {
@@ -30,6 +31,7 @@ public class PlayerMovement : MonoBehaviour
         horizontalDirection = GetInput().x;
         if (Input.GetButtonDown("Jump") && onGround)
             Jump();
+        animator.SetFloat("Speed", Mathf.Abs(horizontalDirection));
     }
     private Vector2 GetInput()
     {

@@ -15143,6 +15143,7 @@ MonoBehaviour:
   airLinearDrag: 2.5
   fallMultiplier: 8
   lowJumpFallMultiplier: 5
+  animator: {fileID: 1822248181}
 --- !u!95 &1822248181
 Animator:
   serializedVersion: 4
